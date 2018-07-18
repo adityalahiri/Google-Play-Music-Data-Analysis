@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.js"></script>
+    </head>
+    <body>
+        
+    <div id="discretebarchart"><svg style="width:1200px;height:800px;"></svg></div>
+
+
+    <script>
+
+
+
+                data_discretebarchart=[{"values": [{"x": "Say You Won't Let Go", "y": 92}, {"x": "Zinda", "y": 88}, {"x": "Atlantis", "y": 87}, {"x": "Riptide", "y": 85}, {"x": "Feeling Good", "y": 81}, {"x": "Choo Lo", "y": 78}, {"x": "Georgia", "y": 77}, {"x": "Something Just Like This", "y": 77}, {"x": "We Are Young (feat. Janelle Mon\u00e1e)", "y": 75}, {"x": "Sleep On The Floor", "y": 74}], "key": "Serie 1", "yAxis": "1"}];
+
+
+            nv.addGraph(function() {
+        var chart = nv.models.discreteBarChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_discretebarchart;
+
+
+
+                    chart.yAxis
+                .tickFormat(d3.format(',.0f'));
+
+    
+    
+
+        
+
+
+
+            d3.select('#discretebarchart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 1200)
+            .attr('height', 800)
+            .call(chart);
+
+    
+        });
+
+
+
+    </script>
+
+    </body>
+</html>

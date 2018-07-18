@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.js"></script>
+    </head>
+    <body>
+        
+    <div id="discretebarchart"><svg style="width:1200px;height:800px;"></svg></div>
+
+
+    <script>
+
+
+
+                data_discretebarchart=[{"values": [{"x": "Various Artists", "y": 676}, {"x": "Arctic Monkeys", "y": 596}, {"x": "Shankar-Ehsaan-Loy", "y": 578}, {"x": "Ed Sheeran", "y": 570}, {"x": "Coldplay", "y": 558}, {"x": "Amit Trivedi", "y": 395}, {"x": "Imagine Dragons", "y": 315}, {"x": "A.R. Rahman", "y": 308}, {"x": "Vance Joy", "y": 308}, {"x": "OneRepublic", "y": 299}], "key": "Serie 1", "yAxis": "1"}];
+
+
+            nv.addGraph(function() {
+        var chart = nv.models.discreteBarChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_discretebarchart;
+
+
+
+                    chart.yAxis
+                .tickFormat(d3.format(',.0f'));
+
+    
+    
+
+        
+
+
+
+            d3.select('#discretebarchart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 1200)
+            .attr('height', 800)
+            .call(chart);
+
+    
+        });
+
+
+
+    </script>
+
+    </body>
+</html>
